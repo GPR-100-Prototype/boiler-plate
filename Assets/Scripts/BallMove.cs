@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallMove : MonoBehaviour
 {
+    public float force;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -15,10 +16,10 @@ public class BallMove : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
-            rb.velocity = Vector3.up;
+            rb.velocity = Time.deltaTime * force * Vector3.up;
         if (Input.GetKey(KeyCode.A))
-            rb.velocity = Vector3.left;
+            rb.velocity = Time.deltaTime * force * Vector3.left;
         if (Input.GetKey(KeyCode.D))
-            rb.velocity = Vector3.right;
+            rb.velocity = Time.deltaTime * force * Vector3.right;
     }
 }

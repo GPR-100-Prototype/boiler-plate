@@ -8,12 +8,17 @@ public class BallMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.W))
+            rb.velocity = Vector3.up;
+        if (Input.GetKey(KeyCode.A))
+            rb.velocity = Vector3.left;
+        if (Input.GetKey(KeyCode.D))
+            rb.velocity = Vector3.right;
     }
 }

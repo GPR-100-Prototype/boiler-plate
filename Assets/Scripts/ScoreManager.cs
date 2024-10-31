@@ -5,16 +5,11 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public TextMeshProUGUI text;
+    public int currentScore = 0;
     void Update()
     {
-        
+        text.text = this.currentScore.ToString();
+        //test
     }
 }
